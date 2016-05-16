@@ -1,0 +1,14 @@
+#appned to /etc/apache2/sites-enabled/000-default.conf
+#<Directory /var/www/html>
+#    Options FollowSymLinks Indexes
+#    AllowOverride all
+#</Directory>
+<Files newrelic.php>
+php_value    output_buffering        4096
+php_value    output_handler          mb_output_handler
+php_value    mbstring.http_output            SJIS-win
+php_value    mbstring.http_input             SJIS-win
+php_value    mbstring.detect_order           ASCII,JIS,UTF-8,eucJP-win,SJIS-win
+php_value    mbstring.internal_encoding      eucJP-win
+php_value    mbstring.encoding_translation 1
+</Files>
